@@ -26,7 +26,7 @@ print(db)
 query1 = 'create table medications (NDC_Code varchar(255), Name varchar(255), Packager varchar(255), ID int NOT NULL AUTO_INCREMENT PRIMARY KEY);'
 query2 = 'create table treatments_procedures (CPT_Code varchar(255), Diagnosis varchar(255), Description varchar(255), ID int NOT NULL AUTO_INCREMENT PRIMARY KEY);'
 query3 = 'create table conditions (Name varchar(255), ICD_10 varchar(255), Description varchar(255), Billable boolean, treatment_procedure_ID int, foreign key (treatment_procedure_ID) references treatments_procedures(ID), ID int NOT NULL AUTO_INCREMENT PRIMARY KEY);'
-query4 =  'create table social_determinants (Name varchar(255), Description varchar(255), Ionic_code varchar(255), Status varchar(255), ID int NOT NULL AUTO_INCREMENT PRIMARY KEY);'
+query4 = 'create table social_determinants (Name varchar(255), Description varchar(255), Ionic_code varchar(255), Status varchar(255), ID int NOT NULL AUTO_INCREMENT PRIMARY KEY);'
 query5 = 'create table patients (Name varchar(255), ID int NOT NULL AUTO_INCREMENT PRIMARY KEY, Age int, Gender varchar(255), social_determinants_ID int, foreign key (social_determinants_ID) references social_determinants(ID));'
 
 db.execute(query1)
